@@ -55,6 +55,18 @@ TEST(Ladder, LastErrorGenerateWordLadder){
     vector<string> my_ladder =  generate_word_ladder("pat","caitlyn", my_words);
 }
 
+
+TEST(Dijkstras, DijkstraTest){
+    Graph G;
+    file_to_graph("./src/small.txt", G);
+    vector<int> prev(G.size());
+    vector<int> shortest_path = dijkstra_shortest_path(G, 0, prev);
+    cout << "Shortest path " << endl;
+    for(auto path: shortest_path){
+        cout << path << " ";
+    }
+    
+}
 // TEST(Ladder, VerifyLadder){
 //     verify_word_ladder();
 // }

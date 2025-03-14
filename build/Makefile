@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named dijkstra_main
+
+# Build rule for target.
+dijkstra_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dijkstra_main
+.PHONY : dijkstra_main
+
+# fast build rule for target.
+dijkstra_main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dijkstra_main.dir/build.make CMakeFiles/dijkstra_main.dir/build
+.PHONY : dijkstra_main/fast
+
+#=============================================================================
 # Target rules for targets named ladder_main
 
 # Build rule for target.
@@ -190,6 +203,57 @@ gtest/student_gtests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/student_gtests.dir/build.make CMakeFiles/student_gtests.dir/gtest/student_gtests.cpp.s
 .PHONY : gtest/student_gtests.cpp.s
 
+src/dijkstras.o: src/dijkstras.cpp.o
+.PHONY : src/dijkstras.o
+
+# target to build an object file
+src/dijkstras.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dijkstra_main.dir/build.make CMakeFiles/dijkstra_main.dir/src/dijkstras.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/student_gtests.dir/build.make CMakeFiles/student_gtests.dir/src/dijkstras.cpp.o
+.PHONY : src/dijkstras.cpp.o
+
+src/dijkstras.i: src/dijkstras.cpp.i
+.PHONY : src/dijkstras.i
+
+# target to preprocess a source file
+src/dijkstras.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dijkstra_main.dir/build.make CMakeFiles/dijkstra_main.dir/src/dijkstras.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/student_gtests.dir/build.make CMakeFiles/student_gtests.dir/src/dijkstras.cpp.i
+.PHONY : src/dijkstras.cpp.i
+
+src/dijkstras.s: src/dijkstras.cpp.s
+.PHONY : src/dijkstras.s
+
+# target to generate assembly for a file
+src/dijkstras.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dijkstra_main.dir/build.make CMakeFiles/dijkstra_main.dir/src/dijkstras.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/student_gtests.dir/build.make CMakeFiles/student_gtests.dir/src/dijkstras.cpp.s
+.PHONY : src/dijkstras.cpp.s
+
+src/dijkstras_main.o: src/dijkstras_main.cpp.o
+.PHONY : src/dijkstras_main.o
+
+# target to build an object file
+src/dijkstras_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dijkstra_main.dir/build.make CMakeFiles/dijkstra_main.dir/src/dijkstras_main.cpp.o
+.PHONY : src/dijkstras_main.cpp.o
+
+src/dijkstras_main.i: src/dijkstras_main.cpp.i
+.PHONY : src/dijkstras_main.i
+
+# target to preprocess a source file
+src/dijkstras_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dijkstra_main.dir/build.make CMakeFiles/dijkstra_main.dir/src/dijkstras_main.cpp.i
+.PHONY : src/dijkstras_main.cpp.i
+
+src/dijkstras_main.s: src/dijkstras_main.cpp.s
+.PHONY : src/dijkstras_main.s
+
+# target to generate assembly for a file
+src/dijkstras_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dijkstra_main.dir/build.make CMakeFiles/dijkstra_main.dir/src/dijkstras_main.cpp.s
+.PHONY : src/dijkstras_main.cpp.s
+
 src/ladder.o: src/ladder.cpp.o
 .PHONY : src/ladder.o
 
@@ -249,6 +313,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... dijkstra_main"
 	@echo "... ladder_main"
 	@echo "... student_gtests"
 	@echo "... gtest/gtestmain.o"
@@ -257,6 +322,12 @@ help:
 	@echo "... gtest/student_gtests.o"
 	@echo "... gtest/student_gtests.i"
 	@echo "... gtest/student_gtests.s"
+	@echo "... src/dijkstras.o"
+	@echo "... src/dijkstras.i"
+	@echo "... src/dijkstras.s"
+	@echo "... src/dijkstras_main.o"
+	@echo "... src/dijkstras_main.i"
+	@echo "... src/dijkstras_main.s"
 	@echo "... src/ladder.o"
 	@echo "... src/ladder.i"
 	@echo "... src/ladder.s"
