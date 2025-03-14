@@ -30,9 +30,17 @@ void verify_word_ladder() {
 }
 
 void print_word_ladder(const vector<string>& ladder){
-    for(auto l : ladder){
-        cout << l << " ";
+    if(ladder != vector<string>()){
+        cout << "Word ladder found: ";
+        for(auto l : ladder){
+            cout << l << " ";
+        }
+        cout << endl;
     }
+    else {
+        cout << "No word ladder found." << endl;
+    }
+    
 }
 void load_words(set<string> & word_list, const string& file_name){
     ifstream myFile;
@@ -51,6 +59,9 @@ void load_words(set<string> & word_list, const string& file_name){
 
 bool is_adjacent(const string& word1, const string& word2){
     //A neighbor of a given word w is a word that differs by exactly 1 letter from w
+    // if(word1 == word2){
+    //     return true;
+    // }
     return edit_distance_within(word1, word2, 1);
 }
 
@@ -86,7 +97,7 @@ bool edit_distance_within(const std::string& str1, const std::string& str2, int 
     if (i < m || j < n){
         count++;
     }
-    return count == d;
+    return count == d || count == 0;
 }
 
 

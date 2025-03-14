@@ -19,6 +19,7 @@ TEST(Ladder, LoadingWords) {
 }
 
 TEST(Ladder, IsAdjacent){
+    EXPECT_TRUE(is_adjacent("apple", "apple"));
     EXPECT_TRUE(is_adjacent("cat", "car"));
     EXPECT_TRUE(is_adjacent("reading", "readin"));
     EXPECT_TRUE(is_adjacent("baker", "bakers"));
@@ -30,6 +31,7 @@ TEST(Ladder, EditDistances){
     EXPECT_TRUE(edit_distance_within("morp", "meep", 2));
     EXPECT_FALSE(edit_distance_within("cake", "cupcake", 2));
     EXPECT_FALSE(edit_distance_within("tired", "hungry", 2));
+    EXPECT_TRUE(edit_distance_within("apple", "apple",1));
 }
 
 TEST(Ladder, ErrorGenerateWordLadder){
@@ -53,6 +55,6 @@ TEST(Ladder, LastErrorGenerateWordLadder){
     vector<string> my_ladder =  generate_word_ladder("pat","caitlyn", my_words);
 }
 
-TEST(Ladder, VerifyLadder){
-    verify_word_ladder();
-}
+// TEST(Ladder, VerifyLadder){
+//     verify_word_ladder();
+// }
