@@ -59,5 +59,6 @@ void print_path(const vector<int>& v, int total){
     for(auto value : v){
         cout << value << " ";
     }
+    cout << endl;
     cout << "Total Cost is " << total << endl;
 }
