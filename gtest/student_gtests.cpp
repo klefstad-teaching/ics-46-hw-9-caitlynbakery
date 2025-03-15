@@ -67,6 +67,30 @@ TEST(Dijkstras, DijkstraTest){
     }
     
 }
+
+TEST(Dijkstras, ShortestDijkstraTest){
+    Graph G;
+    file_to_graph("./src/small.txt", G);
+    vector<int> prev(G.size());
+    vector<int> shortest_path = dijkstra_shortest_path(G, 0, prev);
+    cout << "BEFORE EXTRACT " << endl;
+    vector<int> extract = extract_shortest_path(shortest_path, prev, 1);
+    for (auto e: extract){
+        cout << e << " ";
+    }
+}
+
+TEST(Dijkstras, MediumDijkstraTest){
+    Graph G;
+    file_to_graph("./src/medium.txt", G);
+    vector<int> prev(G.size());
+    vector<int> shortest_path = dijkstra_shortest_path(G, 0, prev);
+    cout << "BEFORE EXTRACT " << endl;
+    vector<int> extract = extract_shortest_path(shortest_path, prev, 4);
+    for (auto e: extract){
+        cout << e << " ";
+    }
+}
 // TEST(Ladder, VerifyLadder){
 //     verify_word_ladder();
 // }
